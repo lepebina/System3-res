@@ -1,0 +1,105 @@
+[
+    {
+        "pkg"     : "br.com.softbox.atest_bdd.stepdefs.out_of_stock",
+        "feature" : "out_of_stock",
+        "test"    : "OutOfStockTest",
+        "stepdefs": "OutOfStockSteps",
+        "title"   : "Out Of Stock"
+    },
+    {
+        "pkg"     : "br.com.softbox.atest_bdd.stepdefs.finish_orders",
+        "feature" : "finish_orders",
+        "test"    : "FinishOrdersTest",
+        "stepdefs": "FinishOrdersSteps",
+        "title"   : "Finish Orders"
+    },
+    {
+        "pkg"     : "br.com.softbox.atest_bdd.stepdefs.pf",
+        "feature" : "pessoa_fisica",
+        "test"    : "PessoaFisicaTest",
+        "stepdefs": "PessoaFisicaSteps",
+        "title"   : "Pessoa Fisica"
+    },
+    {
+        "pkg"     : "br.com.softbox.atest_bdd.stepdefs.pj",
+        "feature" : "pessoa_juridica",
+        "test"    : "PessoaJuridicaTest",
+        "stepdefs": "PessoaJuridicaSteps",
+        "title"   : "Pessoa Juridica"
+    },
+
+    {
+        "pkg"     : "br.com.softbox.atest_bdd.stepdefs.multiplus",
+        "feature" : "multiplus",
+        "test"    : "MultiplusTest",
+        "stepdefs": "MultiplusSteps",
+        "title"   : "Multiplus"
+    },
+    {
+        "pkg"     : "br.com.softbox.atest_bdd.stepdefs.ofertas",
+        "feature" : "registerOfertasDescontos",
+        "test"    : "OfertasDescontosTest",
+        "stepdefs": "OfertasDescontosSteps",
+        "title"   : "Ofertas e Descontos"
+    },
+    {
+        "pkg"     : "br.com.softbox.atest_bdd.stepdefs.search",
+        "feature" : "search",
+        "test"    : "SearchTest",
+        "stepdefs": "SearchSteps",
+        "title"   : "Pesquisar Produtos"
+    },
+    {
+        "pkg"     : "br.com.softbox.atest_bdd.stepdefs.wishlist",
+        "feature" : "wishlist",
+        "test"    : "WishlistTest",
+        "stepdefs": "WishlistSteps",
+        "title"   : "Wishlist"
+    },
+    {
+        "pkg"     : "br.com.softbox.atest_bdd.stepdefs.sub",
+        "feature" : "sub_page",
+        "test"    : "SubTest",
+        "stepdefs": "SubSteps",
+        "title"   : "SubPage"
+    },
+    {
+        "pkg": "br.com.softbox.atest_bdd.stepdefs.login",
+        "feature": "login",
+        "test": "LoginTest",
+        "stepdefs": "LoginSteps",
+        "title": "Login"
+    },
+
+    {
+        "pkg": "br.com.softbox.atest_bdd.stepdefs.pdp",
+        "feature": "pdp",
+        "test": "PdpTest",
+        "stepdefs": "PdpSteps",
+        "title": "PDP"
+    },
+
+    {
+        "pkg": "br.com.softbox.atest_bdd.stepdefs.shopping_cart",
+        "feature": "shopping_cart",
+        "test": "ShoppingCartTest",
+        "stepdefs": "ShoppingCartSteps",
+        "title": "Carrinho"
+    },
+
+    {
+        "pkg": "br.com.softbox.atest_bdd.stepdefs.fardamento_futebol",
+        "feature": "fardamento_futebol",
+        "test": "FardamentoFutebolTest",
+        "stepdefs": "FardamentoFutebolSteps",
+        "title": "Fardamento Futebol"
+    },
+
+    {
+        "pkg": "br.com.softbox.atest_bdd.stepdefs.stelo",
+        "feature": "stelo",
+        "test": "SteloTest",
+        "stepdefs": "SteloSteps",
+        "title": "Stelo"
+    }
+]

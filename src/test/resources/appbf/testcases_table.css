@@ -1,0 +1,7 @@
+
+.norun {
+    -fx-border-color: gray;
+    -fx-background-color: #FF9696;
+    -fx-text-fill: black;
+}
+

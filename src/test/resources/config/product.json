@@ -1,0 +1,53 @@
+
+[
+    {
+        "type_name" : "ball"
+        , "alternative_type_names" : ["bola", "bola futebol"]
+        , "custom_name" : "Softbox"
+        , "custom_name_left": ""
+        , "custom_name_right": ""
+        , "custom_number" : ""
+        , "can_have_color" : "yes"
+        , "can_have_size" : "no"
+    },
+    {
+        "type_name" : "team t-shirt"
+        , "alternative_type_names" : ["team-shirt", "camiseta de time"]
+        , "custom_name" : "Chuchu"
+        , "custom_name_left": ""
+        , "custom_name_right": ""
+        , "custom_number" : "42"
+        , "can_have_color" : "yes"
+        , "can_have_size" : "yes"
+    },
+    {
+        "type_name" : "t-shirt"
+        , "alternative_type_names" : ["camiseta"]
+        , "custom_name" : "Chuchu"
+        , "custom_number" : "M"
+        , "can_have_color" : "yes"
+        , "can_have_size" : "yes"
+    },
+    {
+          "type_name" : "cap"
+        , "alternative_type_names" : ["bone"]
+        , "custom_name" : ""
+        , "custom_name_front": "BDD"
+        , "custom_name_left": "Softbox"
+        , "custom_name_right": "Netshoes"
+        , "custom_number" : ""
+        , "can_have_color" : "yes"
+        , "can_have_size" : "no"
+    },
+    {
+          "type_name" : "jacket"
+        , "alternative_type_names" : ["jaqueta adidas", "jaqueta"]
+        , "custom_name" : "Juventino"
+        , "custom_name_left": ""
+        , "custom_name_right": ""
+        , "custom_number" : ""
+        , "can_have_color" : "yes"
+        , "can_have_size" : "yes"
+    }
+
+]

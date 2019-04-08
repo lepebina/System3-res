@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.softbox.appbf.AtestTestCaseController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Button fx:id="btnStart" mnemonicParsing="false" onAction="#handleStart" />
+                  <Button fx:id="btnStop" mnemonicParsing="false" onAction="#handleStop" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="2.0" />
+                  <Label text="Evidence Level:" />
+                  <ComboBox fx:id="cboxEvidenceLevel" onAction="#handleEvidenceLevel" prefHeight="25.0" prefWidth="124.0" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+                  <Label text="Store:" />
+                  <ComboBox fx:id="cboxStore" onAction="#handleCboxStore" prefWidth="150.0" />
+                  <ImageView fx:id="imgStore" pickOnBounds="true" preserveRatio="true" />
+                  <Separator orientation="VERTICAL" />
+                  <ComboBox fx:id="cboxSite" onAction="#handleCboxSite" prefHeight="25.0" prefWidth="390.0" promptText="Hosts" />
+                  <Button fx:id="btnAddSite" mnemonicParsing="false" onAction="#handleAddSite" />
+                  <Separator orientation="VERTICAL" prefHeight="25.0" prefWidth="0.0" />
+                  <Button fx:id="btnSave" mnemonicParsing="false" onAction="#handleSaveFeature" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+                  <Button fx:id="btnSettings" mnemonicParsing="false" onAction="#handleSettings" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+                  <Button fx:id="btnAbout" mnemonicParsing="false" onAction="#handleAbout" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+                  <Button fx:id="btnQuit" mnemonicParsing="false" onAction="#handleQuit" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="33.0" prefWidth="131.0">
+                     <children>
+                        <ImageView fx:id="imgViewRunning" fitHeight="33.0" fitWidth="33.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+               </items>
+            </ToolBar>
+            <SplitPane dividerPositions="0.28297161936560933" prefHeight="600.0" prefWidth="1200.0" VBox.vgrow="ALWAYS">
+              <items>
+                <AnchorPane>
+                     <children>
+                        <TableView fx:id="tableTest" prefHeight="598.0" prefWidth="335.0" stylesheets="@testcases_table.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tableColTest" prefWidth="265.0" text="TEST CASE" />
+                            <TableColumn fx:id="tableColResult" prefWidth="67.0" text="STATUS" />
+                              <TableColumn fx:id="tableColElapsedTime" prefWidth="75.0" text="ELAPSED TIME" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="555.0" prefWidth="856.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                          <AnchorPane fx:id="anchorPaneFeature" minHeight="0.0" minWidth="0.0" prefHeight="192.0" prefWidth="854.0" />
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <TabPane prefHeight="273.0" prefWidth="854.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <tabs>
+                                        <Tab closable="false" text="Log">
+                                             <content>
+                                                <AnchorPane fx:id="anchorPaneLog" prefHeight="200.0" prefWidth="200.0" />
+                                             </content>
+                                          </Tab>
+                                        <Tab fx:id="tabExecution" closable="false" text="Execution">
+                                             <content>
+                                                <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                                  <items>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <TableView fx:id="tblViewScenarios" prefHeight="119.0" prefWidth="854.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <columns>
+                                                                <TableColumn fx:id="tblColScenarioStatus" editable="false" prefWidth="67.0" text="STATUS" />
+                                                                  <TableColumn fx:id="tblColScenarioIndex" editable="false" prefWidth="75.0" text="INDEX" />
+                                                                <TableColumn fx:id="tblColScenarioName" editable="false" minWidth="0.0" prefWidth="638.0" text="SCENARIO" />
+                                                                  <TableColumn fx:id="tblColScenarioDuration" editable="false" prefWidth="73.0" text="DURATION" />
+                                                              </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                         <children>
+                                                            <TableView fx:id="tblViewSteps" prefHeight="119.0" prefWidth="854.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <columns>
+                                                                <TableColumn fx:id="tblColStepStatus" editable="false" prefWidth="64.0" text="STATUS" />
+                                                                <TableColumn fx:id="tblColStepName" editable="false" prefWidth="718.0" text="STEP" />
+                                                                  <TableColumn fx:id="tblColStepDuration" editable="false" prefWidth="71.0" text="DURATION" />
+                                                              </columns>
+                                                            </TableView>
+                                                         </children>
+                                                      </AnchorPane>
+                                                  </items>
+                                                </SplitPane>
+                                             </content>
+                                          </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

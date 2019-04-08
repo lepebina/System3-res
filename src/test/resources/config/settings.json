@@ -1,0 +1,58 @@
+
+{
+    "root_dir"     : "C:\\work\\app_ns",
+    "workspace_dir": "workspace_atestbf",
+    "feature_dir"  : "feature",
+    "feature_dir_store_1" : "netshoes_features",
+    "feature_dir_store_2" : "zattini_features",
+    "evidence_dir" : "evidence",
+
+    "store_1" : "NETSHOES",
+    "store_2" : "ZATTINI",
+
+    "sites_store_1" : [
+          "http://netshoes.com.br"
+        , "http://novanetshoes-hmg02.ns2online.com.br"
+        , "http://novanetshoes-hmg03.ns2online.com.br"
+        , "http://novanetshoes-hmg04.ns2online.com.br"
+        , "http://novanetshoes-hmg05.ns2online.com.br"
+        , "http://novanetshoes-hmg06.ns2online.com.br"
+        , "http://netshoes-ar-hmg01.ns2online.com.br"
+    ],
+
+    "sites_store_2" : [
+          "http://zattini.com.br"
+        , "http://zattini-hmg02.ns2online.com.br/"
+        , "http://zattini-hmg03.ns2online.com.br/"
+        , "http://zattini-hmg04.ns2online.com.br/"
+        , "http://zattini-hmg05.ns2online.com.br/"
+        , "http://zattini-hmg06.ns2online.com.br/"
+    ],
+
+    "main_menu_pages" : [
+        {
+            "id" : "netshoes",
+            "LOGIN": "account/login.jsp",
+            "LOGOUT": "inc/logoutform.jsp",
+            "ACCOUNT": "account/my-account.jsp",
+            "ORDERS": "account/my-orders.jsp?n=5",
+            "ADDRESSES": "account/my-addresses.jsp",
+            "WISH_LIST": "account/wish-list.jsp"
+        },
+        {
+            "id": "zattini",
+            "LOGIN": "account/login.jsp",
+            "LOGOUT": "inc/logoutform.jsp",
+            "ACCOUNT": "account/my-account.jsp",
+            "ORDERS": "account/my-orders.jsp?n=5",
+            "ADDRESSES": "account/my-addresses.jsp",
+            "WISH_LIST": "account/wish-list.jsp"
+        }
+    ],
+
+    "selenium": {
+        "run_as_localhost": "yes",
+        "grid"            : "http://localhost:4444/wd/hub",
+        "chrome_bin"      : ""
+    }
+}

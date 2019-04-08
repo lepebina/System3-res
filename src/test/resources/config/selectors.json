@@ -1,0 +1,3391 @@
+{
+    "selenium_by": ["id", "class", "css", "xpath", "linkText", "name", "tagName", "partialLinkText"],
+
+    "element_return" : ["single", "list"],
+
+    "hosts_alias" : [
+          { "alias" : "default"    , "url": ""}
+        , { "alias" : "hmg01"      , "url": "http://netshoes-ar-hmg01.ns2online.com.br" }
+        , { "alias" : "hmg02"      , "url": "http://novanetshoes-hmg02.ns2online.com.br" }
+        , { "alias" : "hmg03"      , "url": "http://novanetshoes-hmg03.ns2online.com.br" }
+        , { "alias" : "hmg04"      , "url": "http://novanetshoes-hmg04.ns2online.com.br" }
+        , { "alias" : "hmg05"      , "url": "http://novanetshoes-hmg05.ns2online.com.br" }
+        , { "alias" : "hmg06"      , "url": "http://novanetshoes-hmg06.ns2online.com.br" }
+        , { "alias" : "zhmg02"     , "url": "http://zattini-hmg02.ns2online.com.br" }
+        , { "alias" : "zhmg03"     , "url": "http://zattini-hmg03.ns2online.com.br" }
+        , { "alias" : "zhmg04"     , "url": "http://zattini-hmg04.ns2online.com.br" }
+        , { "alias" : "zhmg05"     , "url": "http://zattini-hmg05.ns2online.com.br" }
+        , { "alias" : "zhmg06"     , "url": "http://zattini-hmg06.ns2online.com.br" }
+        , { "alias" : "production" , "url": "http://netshoes.com.br" }
+        , { "alias" : "zproduction", "url": "http://zattini.com.br" }
+    ],
+
+    "bundle" : [
+        {
+            "id": "Netshoes.closeAppBanner",
+            "description": "Botao fechar do banner APP",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "browse-for-free__close"}
+            ]
+        },
+        {
+            "id": "MenuUserAccount.isLogged_01",
+            "description": "Verifica se existe a saudacao ao usuario no menu de conta",            
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "hmg05"     , "selenium_by": "id", "selector_text": ""},
+                {"alias": "production", "selenium_by": "class", "selector_text": ""}
+            ]
+        },
+        {
+            "id": "ProductPage.findSize.size",
+            "description": "Lista de tamanhos",            
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div[data-type='size'] > ul > li > label > span.attr-name"}
+            ]
+        },
+        {
+            "id": "ProductPage.customizeCap.persFront",
+            "description": "Personaliza a frente do produto",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "persFront"}
+            ]
+        },
+        {
+            "id": "ProductPage.customizeCap.persLeft",
+            "description": "Personaliza o lado esquerdo do produto",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default"     , "selenium_by": "id", "selector_text": "persLeft"}
+            ]
+        },
+        {
+            "id": "ProductPage.customizeCap.persRight",
+            "description": "Personaliza o lado direito do produto",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default"   , "selenium_by": "id", "selector_text": "persRight"},
+                {"alias": "hmg02", "selenium_by": "id", "selector_text": "persRight"},
+                {"alias": "hmg05"     , "selenium_by": "id", "selector_text": "persRight"},
+                {"alias": "production", "selenium_by": "id", "selector_text": "persRight"}
+            ]
+        },
+        {
+            "id": "ProductPage.clickOnFirstAvailableSizeForTeamTShirt.availableSize",
+            "description": "Lista de tamanhos disponiveis",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div[data-type='size'] > ul > li > label > span.attr-name"}
+            ]
+        },
+        {
+        	"id": "ProductPage.closeImageZoom",
+            "description": "Fecha a imagem aumentada",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "a.action-modal-close.btn-modal-close"}
+            ]
+        },
+      	{
+        	"id": "ProductPage.getExistCpfMsg.cpf",
+            "description": "Cpf já existente",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "p.base-feedback > strong"}
+            ]
+        },
+		{
+        	"id": "ProductPage.getCnpjAlert.cnpj",
+            "description": "CNPJ já existente",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "p.base-feedback > strong"}
+            ]
+        },
+
+        {
+            "id": "ProductPage.clickOnlyInStockSize",
+            "description": "Lista de tamanhos disponiveis",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "span[class='attr-name']"}
+            ]
+        },
+
+        {
+            "id": "ProductPage.clickAnySize",
+            "description": "Lista de todos os tamanhos",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".product-attr-list.attr-size .attr-name"}
+            ]
+        },
+
+        {
+            "id": "ProductPage.customizeTeamTShirt.name",
+            "description": "nome para personalizar a camiseta",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "persName"}
+            ]
+        },
+        {
+            "id": "ProductPage.customizeTeamTShirt.number",
+            "description": "numero para personalizar a camiseta",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "persNumber"}
+            ]
+        },
+        {
+            "id": "ProductPage.customizeTeamTShirt.button_ver_como_ficou",
+            "description": "botao para visualizar a imagem da personalizacao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+				{"alias": "default", "selenium_by": "xpath", "selector_text": "html/body/div[2]/div[3]/div/div[1]/div[2]/div[1]/div[3]/a/span"}
+            ]
+        },
+        {
+            "id": "ProductPage.customizeTeamTShirt.image_after_customization",
+            "description": "botao para visualizar a imagem da personalizacao",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".photo-list-slide-holder > ul > li > a"}
+            ]
+        },
+        {
+            "id": "PaymentPage.waitCreditCardHolderIcon.visa_icon",
+            "description": "icone da Visa apresentado na insercao do numero do cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div.i-wrap.i-card.i-visa"}
+            ]
+        },
+        {
+            "id": "PaymentPage.waitCreditCardHolderIcon.master_icon",
+            "description": "icone da Mastercard apresentado na insercao do numero do cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div.i-wrap.i-card.i-master"}
+            ]
+        },
+        {
+            "id": "PaymentPage.waitCreditCardHolderIcon.amex_icon",
+            "description": "icone da American Express apresentado na insercao do numero do cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div.i-wrap.i-card.i-american-express"}
+            ]
+        },
+        {
+            "id": "PaymentPage.waitCreditCardHolderIcon.diners_icon",
+            "description": "icone da Diners apresentado na insercao do numero do cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div.i-wrap.i-card.i-diners"}
+            ]
+        },
+        {
+            "id": "PaymentPage.waitCreditCardHolderIcon.hiper_icon",
+            "description": "icone da Hipercard apresentado na insercao do numero do cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div.i-wrap.i-card.i-hiper-card"}
+            ]
+        },
+        {
+            "id": "PaymentPage.waitCreditCardHolderIcon.elo_icon",
+            "description": "icone da Hipercard apresentado na insercao do numero do cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div.i-wrap.i-card.i-elo"}
+            ]
+        },
+        {
+            "id": "PaymentPage.ops",
+            "description": "indica o erro no preenchimento dos dados de pagamento",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "tooltip-up"}
+            ]
+        },
+        {
+            "id": "ProductPage.customizeJacket.name",
+            "description": "nome para personalizar a jaqueta",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "persName"}
+            ]
+        },
+        {
+            "id": "ProductPage.clickOnFirstAvailableSizeForJacket.availableSize",
+            "description": "Lista de tamanhos disponiveis de jaqueta",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div[data-type='size'] > ul > li > label > span.attr-name"}
+            ]
+        },
+        {
+            "id": "ProductPage.buyBundle.button_comprar_junto",
+            "description": "botao para comprar bundle (item casado)",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "//button[@type='submit' and contains(., \"Comprar junto\")]"}
+            ]
+        },
+        {
+            "id": "ProductPage.buyBundle.popup_title",
+            "description": "titulo da janela de bundle",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div.modal-title > h2.base-title"}
+            ]
+        },
+        {
+            "id": "BundlePage.buy.button_comprar",
+            "description": "botao para comprar na janela de pop up de produtos",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[6]"}
+            ]
+        },
+        {
+            "id": "BundlePage.buy.error",
+            "description": "mensagem de erro - escolha primeiro o tamanho",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "class",
+                    "selector_text": "base-feedback"
+                }
+            ]
+        },
+        {
+            "id": "BundlePage.clickOnFirstSizeForProduct.config_holders",
+            "description": "lista de tamanhos de um produto",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div.attribute-holder[data-type=size] > ul"}
+            ]
+        },
+        {
+            "id": "BundlePage.bundle.config_holders",
+            "description": "lista de tamanhos de um produto",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "div.attribute-holder[data-type=size] > ul"
+                }
+            ]
+        },
+        {
+            "id": "BundlePage.configProducts.select_products",
+            "description": "obtem a lista de produtos do bundle",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                { "alias": "default", "selenium_by": "css", "selector_text": "div.configuration-box" }
+            ]
+        },
+        {
+            "id": "ProductBundlePage.tryToConfigFlavor.available_flavors",
+            "description": "lista de sabores disponiveis",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                { "alias": "default", "selenium_by": "css",  "selector_text": "span.mc" }
+            ]
+        },
+        {
+            "id": "ProductBundlePage.tryToConfigFlavor.available_sizes",
+            "description": "lista de tamanhos disponiveis",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "ul.product-attr-list.attr-size > li > label > span"
+                }
+            ]
+        },
+        {
+            "id": "ProductBundlePage.tryToConfigFlavor.available_colors",
+            "description": "lista de cores disponiveis",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "span.mc"
+                }
+            ]
+        },
+        {
+            "id": "MenuUserAccountPage.menu",
+            "description": "menu de conta na pagina inicial",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "//span[@class='menu-item']"},
+                {"alias": "zproduction", "selenium_by": "class", "selector_text": "menu-item"}
+            ]
+        },
+        {
+            "id": "MenuUserAccountPage.greetings_name",
+            "description": "posicao do nome do usuario autenticado",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "span.user-name"}
+            ]
+        },
+        {
+            "id": "MenuUserAccountPage.menu_option_cadastro",
+            "description": "menu de conta - opcao cadastro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "//a[contains(text(), 'Cadastro')]"}
+            ]
+        },
+        {
+            "id": "MenuUserAccountPage.menu_option_minha_conta",
+            "description": "menu conta - opcao minha conta",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "linkText", "selector_text": "Minha conta"}
+            ]
+        },
+        {
+            "id": "MenuUserAccountPage.menu_option_wishlist",
+            "description": "menu conta - opcao minha lista de desejos",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "linkText", "selector_text": "Lista de Desejos"}
+            ]
+        },
+        {
+            "id": "MenuUserAccountPage.menu_option_sair",
+            "description": "menu conta - opcao sair",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "a.logout"}
+            ]
+        },
+        {
+            "id": "MenuUserAccountPage.menu_option_login",
+            "description": "menu conta - opcao login",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "a[href*=login]"}
+            ]
+        },
+        {
+            "id": "RegisterPage.selectTabPF.pf",
+            "description": "aba pessoa fisica na tela de cadastro",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div.section-holder.section-step1 > ul.box-tab > li > a"}
+            ]
+        },
+        {
+            "id": "RegisterPage.selectTabPF.pj",
+            "description": "aba pessoa juridica na tela de cadastro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "linkText", "selector_text": "pessoa jur�dica"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.name",
+            "description": "campo 'nome' tela cadastro pessoa fisica",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "name"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.lastName",
+            "description": "campo 'sobrenome' tela cadastro pessoa fisica",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "last-name"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.dayBrithday",
+            "description": "campo 'dia' nascimento tela cadastro pessoa fisica",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "dayBrithday"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.monthBrithday",
+            "description": "campo 'mes' nascimento tela cadastro pessoa fisica",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "monthBrithday"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.yearBrithday",
+            "description": "campo 'ano' nascimento tela cadastro pessoa fisica",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "yearBrithday"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.cpf",
+            "description": "campo 'cpf' tela cadastro pessoa fisica",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "cpf"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.cep1",
+            "description": "campo 'cep1' tela cadastro pessoa fisica",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "cep-1"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.cep2",
+            "description": "campo 'cep2' tela cadastro pessoa fisica",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "cep-2"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.addressNum",
+            "description": "campo 'numero' tela cadastro pessoa fisica",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "address-number"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.address",
+            "description": "campo 'endereco/rua/av.' tela cadastro pessoa fisica",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "address"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.neighborhood",
+            "description": "campo 'bairro' tela cadastro pessoa fisica",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "neighborhood"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.city",
+            "description": "campo 'cidade' tela cadastro pessoa fisica",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "city"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.phoneDDD",
+            "description": "campo telefone fixo 'ddd'",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "phone-number-ddd"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.phone",
+            "description": "campo telefone fixo",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "phone-number"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.cellDDD",
+            "description": "campo celular 'ddd'",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "celphone-number-ddd"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.cell",
+            "description": "campo celular",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "celphone-number"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.email",
+            "description": "campo email cadastro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "email"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.password",
+            "description": "campo password cadastro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "password"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.female",
+            "description": "radio button sexo feminino",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "female"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.male",
+            "description": "radio button sexo masculino",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "male"}
+            ]
+        },
+        {
+            "id": "RegisterPage.registerPF.button_continuar",
+            "description": "botao 'continuar' cadastro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "//button[@type='submit']"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPF.accept_contract_terms",
+            "description": "checkbox para aceitar os termos do contrato",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "check-privacy-policy"}
+            ]
+        },
+        {
+            "id": "ops",
+            "description": "indica o erro no preenchimento dos dados",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "tooltip-up"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFData.name",
+            "description": "campo 'nome' tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "name"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFData.lastName",
+            "description": "campo 'sobrenome' tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "last-name"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFData.female",
+            "description": "campo 'feminino' tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "female"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFData.male",
+            "description": "campo 'masculino' tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "male"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFData.phoneDDD",
+            "description": "campo 'ddd' telefone fixo tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "phone-number-ddd"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFData.phone",
+            "description": "campo telefone fixo tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "phone-number"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFData.cellDDD",
+            "description": "campo 'ddd' celular tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "celphone-number-ddd"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFData.cell",
+            "description": "campo celular tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "celphone-number"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.link_page_dados_cadastrais",
+            "description": "link para tela de dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "linkText", "selector_text": "Dados cadastrais"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFData.btn_alterar_cadastro",
+            "description": "botao alterar dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[2]"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.success_feedback",
+            "description": "mensagem de sucesso de alteracao de dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "success-feedback"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.link_alterar_senha_e_email",
+            "description": "alteracao de senha",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "linkText", "selector_text": "Alterar senha e e-mail"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFPassword.oldPassword",
+            "description": "senha antiga",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "password"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFPassword.newPassword",
+            "description": "nova senha",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "new-password"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFPassword.confirmPassword",
+            "description": "confirme nova senha",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "confirm-password"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePFPassword.btn_alterar_senha",
+            "description": "botao alterar senha",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[2]"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPFAddress.link_page_enderecos",
+            "description": "atualizar enderecos",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "a[href*=addresses]" }
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPFAddress.btn_adicionar_endereco",
+            "description": "adicionar endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "//div[2]/div[2]/a/span"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPFAddress.address_name",
+            "description": "nome do novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "address-name"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPFAddress.name",
+            "description": "nome do destinatario no novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "name"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPFAddress.surname",
+            "description": "sobrenome do destinatario no novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "lastname"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPFAddress.cep1",
+            "description": "cep1 do novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "new-cep-1"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPFAddress.cep2",
+            "description": "cep2 do novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "new-cep-2"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPFAddress.number",
+            "description": "numero do novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "number"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPFAddress.btn_salvar_endereco",
+            "description": "botao salvar o novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[2]"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPFAddress.check_for_new",
+            "description": "botao salvar o novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[2]"}
+            ]
+        },
+        {
+            "id": "LoginPage.signIn.email_cpf",
+            "description": "login campo email-cpf",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "email-cpf"}
+            ]
+        },
+        {
+            "id": "LoginPage.signIn.email_new_client",
+            "description": "campo email para um cliente novo",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "email"}
+            ]
+        },
+        {
+            "id": "LoginPage.signIn.button_new_client",
+            "description": "botar continuar na opcao de um cliente novo",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[2]"}
+            ]
+        },
+        {
+            "id": "LoginPage.signIn.error_email_already_in_use",
+            "description": "erro de email ja cadastrado",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "class",
+                    "selector_text": "base-feedback"
+                }
+            ]
+        },
+        {
+            "id": "LoginPage.signIn.password",
+            "description": "login campo password",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "password"}
+            ]
+        },
+        {
+            "id": "LoginPage.signIn.password_show",
+            "description": "login campo password - ocultar caracteres",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "password-characteres"}
+            ]
+        },
+        {
+            "id": "LoginPage.signIn.btn_entrar",
+            "description": "login botao entrar",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "form#sendFormRegistered button.highlight-button"}
+            ]
+        },
+        {
+            "id": "LoginPage.signIn.fail",
+            "description": "mensagem de erro ao tentar logar",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "base-feedback"}
+            ]
+        },
+        {
+            "id": "PaymentPage.chooseAnotherShippingAddress.current_shipping_address",
+            "description": "descricao do endereco corrente de entrega",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "place"}
+            ]
+        },
+        {
+            "id": "PaymentPage.chooseAnotherShippingAddress.ship_to_another_address",
+            "description": "link para escolher outro endereco de entrega",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "//a[contains(text(), 'Entregar em outro')]"}
+            ]
+        },
+        {
+            "id": "PaymentPage.chooseAnotherShippingAddress.list_of_available_addresses",
+            "description": "enderecos de entrega disponiveis",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "registered-address-box"}
+            ]
+        },
+        {
+            "id": "PaymentPage.chooseAnotherShippingAddress.available_shipping_address",
+            "description": "seletor para o endereco na lista de enderecos disponiveis",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "place"}
+            ]
+        },
+        {
+            "id": "PaymentPage.chooseAnotherShippingAddress.button_change_address",
+            "description": "botao selecionar um endereco na lista de enderecos disponiveis",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//a[contains(text(),'utilizar este')])[2]"}
+            ]
+        },
+        {
+            "id": "PaymentPage.chooseAnotherShippingAddress.address_name",
+            "description": "nome do endereço",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "strong.place"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.remove_address",
+            "description": "lista botoes 'excluir' endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[2]"}
+            ]
+        },
+        {
+            "id": "RegisterPage.selectTabPJ.pj",
+            "description": "aba pessoa juridica na tela de cadastro",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div.section-holder.section-step1 > ul.box-tab > li > a"}
+            ]
+        },
+
+        {
+            "id": "RegisterPage.fillPJ.company_name",
+            "description": "campo 'razao social' tela cadastro pessoa juridia",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "company-name"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPJ.fantasy_name",
+            "description": "campo 'nome fantazia' tela cadastro pessoa juridia",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "fantasy-name"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPJ.cnpj",
+            "description": "campo 'cnpj' tela cadastro pessoa juridia",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "cnpj"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPJ.state_registration",
+            "description": "campo 'inscricao estatual' tela cadastro pessoa juridia",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "state-registration"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPJ.cep1",
+            "description": "campo 'cep1' tela cadastro pessoa juridia",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "cep-1"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPJ.cep2",
+            "description": "campo 'cep2' tela cadastro pessoa juridia",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "cep-2"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPJ.addressNum",
+            "description": "campo 'numero' tela cadastro pessoa juridia",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "address-number"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPJ.phoneDDD",
+            "description": "campo telefone fixo 'ddd'",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "phone-number-ddd"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPJ.phone",
+            "description": "campo telefone fixo",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "phone-number"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPJ.cellDDD",
+            "description": "campo celular 'ddd'",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "celphone-number-ddd"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPJ.cell",
+            "description": "campo celular",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "celphone-number"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPJ.password",
+            "description": "campo password cadastro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "password"}
+            ]
+        },
+        {
+            "id": "RegisterPage.registerPJ.button_continuar",
+            "description": "botao 'continuar' cadastro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "//button[@type='submit']"}
+            ]
+        },
+        {
+            "id": "RegisterPage.fillPJ.accept_contract_terms",
+            "description": "checkbox para aceitar os termos do contrato",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "check-privacy-policy"}
+            ]
+        },
+
+
+        {
+            "id": "UserAccountPage.updatePJData.company_name",
+            "description": "campo 'razao social' tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "company-name"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePJData.fantasy_name",
+            "description": "campo 'nome fantasia' tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "fantasy-name"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePJData.phoneDDD",
+            "description": "campo 'ddd' telefone fixo tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "phone-number-ddd"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePJData.phone",
+            "description": "campo telefone fixo tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "phone-number"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePJData.cellDDD",
+            "description": "campo 'ddd' celular tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "celphone-number-ddd"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePJData.cell",
+            "description": "campo celular tela dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "celphone-number"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.updatePJData.btn_alterar_cadastro",
+            "description": "botao alterar dados cadastrais",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[2]"}
+            ]
+        },
+
+
+        {
+            "id": "UserAccountPage.addPJAddress.btn_adicionar_endereco",
+            "description": "adicionar endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "//div[2]/div[2]/a/span"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPJAddress.address_name",
+            "description": "nome do novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "address-name"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPJAddress.company_name",
+            "description": "nome do destinatario no novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "name"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPJAddress.fantasy_name",
+            "description": "sobrenome do destinatario no novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "lastname"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPJAddress.cep1",
+            "description": "cep1 do novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "new-cep-1"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPJAddress.cep2",
+            "description": "cep2 do novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "new-cep-2"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPJAddress.number",
+            "description": "numero do novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "number"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPJAddress.btn_salvar_endereco",
+            "description": "botao salvar o novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[2]"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.addPJAddress.check_for_new",
+            "description": "botao salvar o novo endereco",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[2]"}
+            ]
+        },
+        {
+            "id": "UserAccountPage.link_page_enderecos",
+            "description": "link para alterar enderecos",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//a[contains(text(),'Endere')])[2]"}
+            ]
+        },
+        {
+            "id": "CartPage.verifyIfProductAdded",
+            "description": "Verifica se o produto foi adicionado no carrinho",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".title>a"}
+            ]
+        },
+
+        {
+            "id": "CartPage.AccessCart",
+            "description": "Acessa carrinho",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".mini-cart-button"}
+            ]
+        },
+
+        {
+            "id": "CartPage.RemoveFromCart",
+            "description": "Remove produto do carrinho",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".lnk[value='remove']"}
+            ]
+        },
+
+
+        {
+            "id": "CartPage.cleanUp.button_remove",
+            "description": "limpa o carrinho",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "form[name=\"formEmpty\"] > button.lnk"}
+            ]
+        },
+        {
+            "id": "CartPage.goToCartPage.click_mini_cart_button",
+            "description": "limpa o carrinho",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "mini-cart-button"}
+            ]
+        },
+        {
+            "id": "CartPage.goToCartPage.cart_title",
+            "description": "sub titulo da pagina carrinho",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "h1.base-title"}
+            ]
+        },
+        {
+            "id": "CartPage.finalizeOrder.button_finalize",
+            "description": "botao concluir compra (carrinho)",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "button.hot-button.medium-button"}
+            ]
+        },
+        {
+            "id": "CartPage.checkAdditionalValueForPersonalization.additional_price_persona",
+            "description": "verifica se existe um preco adicional para itens personalizados",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "personalization-price"}
+            ]
+        },
+        {
+            "id": "CartPage.isEmpty.minicart_total",
+            "description": "total de elemnentos no carrinho",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "mini-cart-total-items"}
+            ]
+        },
+        {
+            "id": "PaymentConfirmationPage.getOrderNumber.order_number",
+            "description": "numero do pedido",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "order-number"}
+            ]
+        },
+
+        {
+            "id": "PaymentPage.payWithCreditCardAndInstallments.installments_combo",
+            "description": "seletor de numero de parcelas para o cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-installments-single"}
+            ]
+        },
+        {
+            "id": "PaymentPage.payWithCreditCardAndInstallments.card_number",
+            "description": "numero do cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-number-single"}
+            ]
+        },
+        {
+            "id": "PaymentPage.payWithCreditCardAndInstallments.card_expiration",
+            "description": "numero do cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-expiration-single"}
+            ]
+        },
+        {
+            "id": "PaymentPage.payWithCreditCardAndInstallments.card_cvv",
+            "description": "codigo de seguranca do cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-code-single"}
+            ]
+        },
+        {
+            "id": "PaymentPage.payWithCreditCardAndInstallments.card_user_name",
+            "description": "nome no cartao (installments)",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-yourname-single"}
+            ]
+        },
+        {
+            "id": "PaymentPage.fill1stCard.installments_combo_card_1",
+            "description": "seletor de numero de parcelas para o cartao 1",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-installments-multiple1"}
+            ]
+        },
+        {
+            "id": "PaymentPage.fill1stCard.card_1_expiration",
+            "description": "validate para o cartao 1",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-expiration-multiple1"}
+            ]
+        },
+
+        {
+            "id": "PaymentPage.fill1stCard.card_1_number",
+            "description": "numero do cartao 1",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-number-multiple1"}
+            ]
+        },
+        {
+            "id": "PaymentPage.fill1stCard.card_1_user_name",
+            "description": "nome no cartao de credito 1",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-yourname-multiple1"}
+            ]
+        },
+        {
+            "id": "PaymentPage.fill1stCard.card_1_cvv",
+            "description": "codigo de seguranca do cartao de credito 1",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-code-multiple1"}
+            ]
+        },
+        {
+            "id": "PaymentPage.fill2ndCard.installments_combo_card_2",
+            "description": "seletor de numero de parcelas para o cartao 2",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-installments-multiple2"}
+            ]
+        },
+        {
+            "id": "PaymentPage.fill2ndCard.card_2_user_name",
+            "description": "nome no cartao de credito 2",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-yourname-multiple2"}
+            ]
+        },
+        {
+            "id": "PaymentPage.fill2ndCard.card_2_expiration",
+            "description": "validate para o cartao 2",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-expiration-multiple2"}
+            ]
+        },
+        {
+            "id": "PaymentPage.fill2ndCard.card_2_cvv",
+            "description": "codigo de seguranca do cartao 2",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-code-multiple2"}
+            ]
+        },
+        {
+            "id": "PaymentPage.payWithCreditCard.card_number",
+            "description": "numero do cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-number-single"}
+            ]
+        },
+        {
+            "id": "PaymentPage.payWithCreditCard.card_user_name",
+            "description": "nome no cartao de credito",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-yourname-single"}
+            ]
+        },
+        {
+            "id": "PaymentPage.payWithCreditCard.card_expiration",
+            "description": "validade do cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-expiration-single"}
+            ]
+        },
+        {
+            "id": "PaymentPage.payWithCreditCard.card_cvv",
+            "description": "codigo de seguranca do cartao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-code-single"}
+            ]
+        },
+        {
+            "id": "PaymentPage.fill2ndCard.card_2_number",
+            "description": "numero do cartao 2",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-number-multiple2"}
+            ]
+        },
+        {
+            "id": "PaymentPage.submit_payment",
+            "description": "botao de efetivar pagamento",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".hot-button.medium-button.arrow-right-icon"}
+            ]
+        },
+        {
+            "id": "PaymentPage.submit_payment_for_2_cards",
+            "description": "botao de efetivar pagamento com dois cartoes",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[3]"}
+            ]
+        },
+        {
+            "id": "PaymentPage.selectShipping.shipping",
+            "description": "seleciona o tipo de entrega",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "select-shipping"}
+            ]
+        },
+        {
+            "id": "PaymentPage.selectShipping.shipping_labels",
+            "description": "lista contendo os nomes dos tipos de entrega",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "shipping-label"}
+            ]
+        },
+        {
+            "id": "PaymentPage.selectPayUsingTwoCreditCards.more_cards",
+            "description": "opcao para pagar com mais de um cartao",
+            "element_return": "single",
+            "timeout": 10,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "more-cards"}
+            ]
+        },
+        {
+            "id": "PaymentPage.selectPayUsingTwoCreditCards.card_2_form",
+            "description": "formulario para o segundo cartao de credito",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-cash-multiple2"}
+            ]
+        },
+        {
+            "id": "PaymentPage.fillAmountForThe1stCard.card_1_value",
+            "description": "quantia a ser paga usando o cartao 1",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "credit-card-cash-multiple1"}
+            ]
+        },
+        {
+            "id": "PaymentPage.payWithBoleto.submit",
+            "description": "botao para pagar com boleto",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[4]"}
+            ]
+        },
+        {
+            "id": "PaymentPage.makeSureThisIsThePaymentPage.payment_title",
+            "description": "titulo  da pagina de pagamento",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div.payment-holder > h2.payment-title"}
+            ]
+        },
+        {
+            "id": "PaymentPage.selectFirstAvailableDate.open_schedule",
+            "description": "link para escolher uma data agendada",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                { "alias": "default", "selenium_by": "css", "selector_text": "a.lnk-schedule" }
+            ]
+        },
+        {
+            "id": "PaymentPage.selectFirstAvailableDate.current_day",
+            "description": "dia corrente no calendario",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css","selector_text": "td.ui-datepicker-days-cell-over.ui-datepicker-current-day > a.ui-state-default"}
+            ]
+        },
+        {
+            "id": "PaymentPage.selectFirstAvailableDate.radio_delivery_shift",
+            "description": "periodo do dia para entrega",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default","selenium_by": "xpath", "selector_text": "//p/input"}
+            ]
+        },
+        {
+            "id": "PaymentPage.selectFirstAvailableDate.radio_delivery_shift_button",
+            "description": "botao para periodo do dia para entrega",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "//input[@id='delivery-shift-1']"}
+            ]
+        },
+        {
+            "id": "PaymentPage.selectFirstAvailableDate.choose_and_close",
+            "description": "botao fechar janela entrega agendada",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                { "alias": "default", "selenium_by": "css", "selector_text": "a.highlight-button.button-close"}
+            ]
+        },
+        {
+            "id": "PaymentPage.payWithStelo.stelo",
+            "description": "botao comprar com Stelo",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                { "alias": "default", "selenium_by": "css", "selector_text": "a.payment-online-button"}
+            ]
+        },
+        {
+            "id": "PaymentPage.payWithStelo.popup_stelo",
+            "description": "Popup Pague com Stelo",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                { "alias": "default", "selenium_by": "xpath", "selector_text": "(//button[@type='submit'])[7]"}
+            ]
+        },
+        {
+            "id": "PaymentPage.payWithStelo.popup_error",
+            "description": "erro apos 'pague com stelo': Ocorreu um erro durante o processamento. Tente uma nova forma de pagamento.",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                { "alias": "default", "selenium_by": "css", "selector_text": "modal-stelo__error-button.highlight-button.medium-button"}
+            ]
+        },
+        {
+            "id": "ProductPage.customizeBall.custom_name",
+            "description": "campo para colocar nome na bola",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "customizationName"}
+            ]
+        },
+        {
+            "id": "ProductPage.button_buy",
+            "description": "botao comprar",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "buy-button"}
+            ]
+        },
+        {
+            "id": "ProductPage.tellMe.name",
+            "description": "campo para o nome no 'Avise-me'",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "tell-me-name"}
+            ]
+        },
+        {
+            "id": "ProductPage.tellMe.email",
+            "description": "campo para o email no 'Avise-me'",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "tell-me-email"}
+            ]
+        },
+        {
+            "id": "ProductPage.tellMe.button_register",
+            "description": "botao para cadastrar o aviso (out of stock)",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "button.main-button.small-button.arrow-right-icon"}
+            ]
+        },
+        {
+            "id": "ProductPage.clickSizeOutOfStock.button_text_avise_me",
+            "description": "botao para cadastrar o aviso (out of stock)",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "xpath", "selector_text": "//span[normalize-space(text())='Avise-me']"}
+            ]
+        },
+        {
+            "id": "ProductPage.discoverSizesOutOfStock.list_of_unavailables",
+            "description": "lista de tamanhos fora de estoque",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "div[data-type='size'] > ul > li > label > span.attr-name.unavailable"}
+            ]
+        },
+
+        {
+            "id": "FacebookPage.user",
+            "description": "Usuário para fazer login",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "email"}
+            ]
+        },
+
+        {
+            "id": "FacebookPage.senha",
+            "description": "Senha para login",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "pass"}
+            ]
+        },
+
+        {
+            "id": "FacebookPage.confirmAccess",
+            "description": "Confirma acesso ao Facebook",
+            "element_return": "single",
+            "timeout": 6,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "._42ft._4jy0.layerConfirm._51_n.autofocus._4jy5._4jy1.selected._51sy"}
+            ]
+        },
+
+        {
+            "id": "GigyaFacebookPage.allow.user",
+            "description": "Facebook usuario",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "email"}
+            ]
+        },
+
+        {
+            "id": "GigyaFacebookPage.allow.password",
+            "description": "Facebook senha",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "pass"}
+            ]
+        },
+
+        {
+            "id": "GigyaFacebookPage.allow.submit",
+            "description": "Facebook confirma acesso",
+            "element_return": "single",
+            "timeout": 6,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "u_0_2"}
+            ]
+        },
+
+
+
+        {
+            "id": "LoginGigya.ChooseLogin",
+            "description": "Seleciona tipo de login gigya",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "#social-login-wrapper_p0>tbody>tr>td>table>tbody>tr>td>center>div>div>div"
+                }
+            ]
+        },
+
+        {
+            "id": "LoginPage.getGigyaSelectorIcon.facebook",
+            "description": "Seleciona login facebook",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "div[alt='Facebook'] > div > div"
+                }
+            ]
+        },
+
+        {
+            "id": "LoginPage.getGigyaSelectorIcon.twitter",
+            "description": "Seleciona login twitter",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "div[alt='Twitter'] > div > div"
+                }
+            ]
+        },
+
+        {
+            "id": "LoginPage.getGigyaSelectorIcon.g+",
+            "description": "Seleciona login google+",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "div[alt='Google+'] > div > div"
+                }
+            ]
+        },
+
+        {
+            "id": "LoginPage.getGigyaSelectorIcon.linkedin",
+            "description": "Seleciona login linkedin",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "div[alt='LinkedIn'] > div > div"
+                }
+            ]
+        },
+
+        {
+            "id": "LoginPage.AfterLoginGigya",
+            "description": "Aguardar página de login após login gigya",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": ".welcome"
+                }
+            ]
+        },
+
+
+        {
+            "id": "SocialNetwork.assertAccess",
+            "description": "Valida que está conectado via determinada rede social",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".social-name"}
+            ]
+        },
+
+        {
+            "id": "SocialNetwork.removeAccess",
+            "description": "Remove conexão com rede social",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".main-button.btn-disconnect"}
+            ]
+        },
+
+        {
+            "id": "UserAccountPage.removeSocialAccounts.accounts",
+            "description": "Remove as contas de rede social",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".main-button.btn-disconnect"}
+            ]
+        },
+
+        {
+            "id": "UserAccountPage.checkSocialExists.names",
+            "description": "nomes das contas de rede social",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "span.social-name"}
+            ]
+        },
+
+        {
+            "id": "GigyaTwitterPage.allow.user",
+            "description": "Usuario para fazer login no Twitter",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "#username_or_email"}
+            ]
+        },
+
+        {
+            "id": "GigyaTwitterPage.allow.password",
+            "description": "Senha para login no Twitter",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": "#password"}
+            ]
+        },
+
+        {
+            "id": "GigyaTwitterPage.allow.submit",
+            "description": "Senha para login",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "allow"}
+            ]
+        },
+
+        {
+            "id": "GigyaGooglePlusPage.allow.user",
+            "description": "Usuario para fazer login no Google+",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "Email"}
+            ]
+        },
+
+        {
+            "id": "GigyaGooglePlusPage.allow.user_next",
+            "description": "Google+ botao next (apos entrada do username)",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "next"}
+            ]
+        },
+
+        {
+            "id": "GigyaGooglePlusPage.allow.password",
+            "description": "Senha para login",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "Passwd"}
+            ]
+        },
+
+        {
+            "id": "GigyaGooglePlusPage.allow.submit",
+            "description": "Google+ fazer login",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "signIn"}
+            ]
+        },
+
+        {
+            "id": "GigyaGooglePlusPage.allow.approve_access",
+            "description": "Google+ permitir o acesso",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "submit_approve_access"}
+            ]
+        },
+
+        {
+            "id": "GigyaLinkedInPage.allow.user",
+            "description": "LinkedIn usuario",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "session_key-oauthAuthorizeForm"}
+            ]
+        },
+
+        {
+            "id": "GigyaLinkedInPage.allow.password",
+            "description": "LinkedIn senha",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "session_password-oauthAuthorizeForm"}
+            ]
+        },
+
+        {
+            "id": "GigyaLinkedInPage.allow.submit",
+            "description": "LinkedIn permitir acesso",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "class", "selector_text": "allow"}
+            ]
+        },
+
+        {
+            "id": "Logged_user",
+            "description": "Verifica que usuário está logado",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".user-name"}
+            ]
+        },
+        {
+            "id": "Logged_user.logout",
+            "description": "Fazer logout",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".logout"}
+            ]
+        },
+
+
+        {
+            "id": "Search.searchbar",
+            "description": "Localiza a barra de pesquisa",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "search"}
+            ]
+        },
+
+        {
+            "id": "Search.searchbarbutton",
+            "description": "Localiza o botão para efetuar pesquisa",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".input-search-bt"}
+            ]
+        },
+
+        {
+            "id": "Search.resultOK",
+            "description": "Localiza elemento pesquisado",
+            "element_return": "single",
+            "timeout": 10,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".name"}
+            ]
+        },
+        {
+            "id": "Search.resultNOK",
+            "description": "Localiza mensagem informando que elemento não existe",
+            "element_return": "single",
+            "timeout": 10,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".description"}
+            ]
+        },
+
+        {
+            "id": "Search.backToTopButton",
+            "description": "Localiza o botão Back to Top",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".button-back-to-top"}
+            ]
+        },
+
+        {
+            "id": "Search.backToTopButtonNotVisible",
+            "description": "Valida que o botão não está sendo apresentado",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".button-back-to-top.is-hidden"}
+            ]
+        },
+
+        {
+            "id": "Search.findFilter",
+            "description": "Encontra todos filtros disponíveis",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".filterable-list.search-option-list.c-wrap>li>a"}
+            ]
+        },
+
+        {
+            "id": "Search.isFilterSelected",
+            "description": "Encontra todos selecionados",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".search-current-selection.expanded>li"}
+            ]
+        },
+
+        {
+            "id": "Search.deleteFilterSelected",
+            "description": "Deleta o filtro selecionado",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".ico"}
+            ]
+        },
+
+        {
+
+            "id": "HomePage.AutoCompleteSearch",
+            "description": "Verifica os elementos retornados do autocomplete",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default", "selenium_by": "css", "selector_text": ".autocomplete-results>li>a"}
+            ]
+        },
+
+        {
+
+            "id": "Search.SelectPage",
+            "description": "Encontra os elementos númericos de mudança de página",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default", "selenium_by": "css", "selector_text": ".pagination-link.is-numeric"}
+            ]
+        },
+
+
+
+        {
+            "id": "Subscribe.GenderM",
+            "description": "Localiza gênero masculino",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "footer-gender-m"}
+            ]
+        },
+
+        {
+            "id": "Subscribe.GenderF",
+            "description": "Localiza gênero feminino",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "footer-gender-f"}
+            ]
+        },
+        {
+            "id": "Subscribe.Email",
+            "description": "Localiza campo email",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "email"}
+            ]
+        },
+        {
+            "id": "Subscribe.OkBtn",
+            "description": "Localiza botão OK",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "submit-step1"}
+                ,{"alias": "zproduction", "selenium_by": "id", "selector_text": "submit-step2"}
+                , { "alias" : "zhmg02"   , "selenium_by": "id", "selector_text": "submit-step2" }
+                , { "alias" : "zhmg03"  , "selenium_by": "id", "selector_text": "submit-step2"  }
+                , { "alias" : "zhmg04"   , "selenium_by": "id", "selector_text": "submit-step2" }
+                , { "alias" : "zhmg05"   , "selenium_by": "id", "selector_text": "submit-step2" }
+                , { "alias" : "zhmg06"   , "selenium_by": "id", "selector_text": "submit-step2" }
+
+            ]
+        },
+        {
+            "id": "Subscribe.Team",
+            "description": "Localiza time",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "news-time"}
+                ,{"alias": "zproduction", "selenium_by": "id", "selector_text": "news-time"}
+                , { "alias" : "zhmg02"   , "selenium_by": "id", "selector_text": "news-time" }
+                , { "alias" : "zhmg03"  , "selenium_by": "id", "selector_text": "news-time"  }
+                , { "alias" : "zhmg04"   , "selenium_by": "id", "selector_text": "news-time" }
+                , { "alias" : "zhmg05"   , "selenium_by": "id", "selector_text": "news-time" }
+                , { "alias" : "zhmg06"   , "selenium_by": "id", "selector_text": "news-time" }
+            ]
+        },
+
+        {
+            "id": "Subscribe.Sport",
+            "description": "Localiza esporte",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "sport"}
+            ]
+        },
+        {
+            "id": "Subscribe.FinishBtn",
+            "description": "Localiza botão de finalização",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "submit-step2"}
+            ]
+        },
+        {
+            "id": "Subscribe.AssertRegistered",
+            "description": "Valida que usuário foi registrado com sucesso",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".mini-modal.modal-feedback"}
+            ]
+        },
+
+        {
+            "id": "Details.AddToWishlist",
+            "description": "Adiciona o pedido na Wishlist",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".discreet-link[value='wishlist']"}
+            ]
+        },
+
+
+
+
+        {
+            "id": "Wishlist.ProductAdded",
+            "description": "Valida que produto foi adicionado",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".single-product.product-medium>a"}
+            ]
+        },
+        {
+            "id": "Wishlist.DeletarProduto",
+            "description": "Localiza botão de remover da Wishlist",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".delete"}
+            ]
+        },
+
+        {
+            "id": "Wishlist.WishlistVazia",
+            "description": "Valida WishList vazia",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".main-content>p" }
+            ]
+        },
+
+        {
+            "id": "CartPage.CheckIfMultiplus",
+            "description": "Valida se é um produto multiplus",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".mini-logo-multiplus"}
+            ]
+        },
+
+        {
+            "id": "PaymentConfirmationPage.GetMultiplus",
+            "description": "Solicita recebimento pontos multiplus",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".main-button.medium-button.right.multiplus-box-button"}
+            ]
+        },
+        {
+            "id": "PaymentConfirmationPage.AssertMultiplus",
+            "description": "Valida que pontos foram recebidos",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": " .payment-sidebar-multiplus-message.is-success>p"}
+            ]
+        },
+        {
+            "id": "PaymentConfirmationPage.MultiplusRules",
+            "description": "Direciona para página de regulamento",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "linkText", "selector_text": "Regulamento"}
+            ]
+        },
+        {
+            "id": "PaymentConfirmationPage.IsMultiplusRulesPage",
+            "description": "Valida que está na página de regulamento",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css","selector_text": ".bannermultiplus>img"}
+            ]
+        },
+
+        {
+            "id": "SubPage.SubBanner",
+            "description": "Valida carregamento do banner da SubPage",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default", "selenium_by": "css", "selector_text": ".carousel-lazyload-image"}
+            ]
+        },
+
+
+        {
+            "id": "ProductPage.sizetable",
+            "description": "Abre tabela de tamanhos",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".discreet-link.see-table.ajax-link-ready .left-icon"}
+            ]
+        },
+
+
+        {
+            "id": "ProductPage.sizetableContentTitle",
+            "description": "Verifica se o titulo da tabela principal está sendo exibido",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".table-size>table>thead>tr>th"}
+            ]
+        },
+
+        {
+            "id": "ProductPage.sizetableContent",
+            "description": "Verifica se a tabela principal está sendo exibida",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".table-size>table>tbody>tr>td"}
+            ]
+        },
+
+
+        {
+        "description": "Escolhe diferentes marcas da tabela de tamanhos",
+        "id": "ProductPage.SizeTableBrand",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default", "selenium_by": "css", "selector_text": ".custom-select-wrap>select"}
+            ]
+        },
+        {
+
+            "id": "ProductPage.SizeTableGender",
+            "description": "Escolhe diferentes marcas da tabela de tamanhos",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default", "selenium_by": "css", "selector_text": ".gender-button"}
+            ]
+        },
+
+        {
+
+            "id": "ProductPage.isPowerReview",
+            "description": "Verifica se produto tem power reviewer e direciona para a respectiva seção",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default", "selenium_by": "css", "selector_text": ".rating-total>a"}
+            ]
+        },
+
+        {
+
+            "id": "ProductPage.PowerReviewEvaluateButton",
+            "description": "Verifica se o botão para fazer avaliação do produto é encontrado",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default", "selenium_by": "css", "selector_text": ".pr-snapshot-write-review>span"}
+            ]
+        },
+
+        {
+
+            "id": "ProductPage.PowerReviewMainDescription",
+            "description": "Verifica o campo principal dos comentários de power reviews ",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default", "selenium_by": "css", "selector_text": ".pr-review-main-wrapper"}
+            ]
+        },
+
+        {
+
+            "id": "ProductPage.PowerReviewBuyerInfo",
+            "description": "Verifica os dados principais do comprador",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default", "selenium_by": "css", "selector_text": ".pr-review-author-info-wrapper"}
+            ]
+        },
+
+        {
+            "id": "TopMenuPage.chooseEsporte",
+            "description": "Seleciona 'Esportes'",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "linkText",
+                    "selector_text": "ESPORTES"
+                }
+            ]
+        },
+        {
+            "id": "TopMenuPage.chooseEsporteFutebolFardamento",
+            "description": "Seleciona 'Esportes > Crie seu Uniforme'",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "linkText",
+                    "selector_text": "Crie seu Uniforme"
+                },
+                {
+                    "alias": "hmg06",
+                    "selenium_by": "linkText",
+                    "selector_text": "Monte seu Uniforme"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.isStartingPage.team_name",
+            "description": "Campo para o nome do time",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='teamName']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.isStartingPage.team_name_check",
+            "description": "Verificacao se existe texto 'Digite o nome do seu time'",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "xpath",
+                    "selector_text": "//*[contains(text(),'Digite o nome do seu time')]"
+                }
+            ]
+        },
+
+        {
+            "id": "FardamentoFutebolPage.setTeamName.start",
+            "description": "botao comecar - 'Digite o nome do seu time'",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='/oe/commerce/productGroup/formhandler/ProductGroupConfigurationFormHandler.updateTeamName']"
+                }
+            ]
+        },
+
+        {
+            "id": "FardamentoFutebolPage.hasTeamNameOnTopOfPage.team_name_on_top_of_page",
+            "description": "verifica o nome do time no topo da pagina",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "id",
+                    "selector_text": "team-name"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.selectFirstTShirtAvailable.tshirt",
+            "description": "primeira camisa disponivel",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "xpath",
+                    "selector_text": "//span/img"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.removeTShirtCustomizations.remover_estilo",
+            "description": "remove a opcao de estilo da camiseta",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "button.skip-link"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.removeTShirtCustomizations.remover_escudo",
+            "description": "remove a opcao de escudo da camiseta",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "xpath",
+                    "selector_text": "(//button[@type='submit'])[5]"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.removeTShirtCustomizations.remover_patrocinio",
+            "description": "remove a opcao de patrocinio da camiseta",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "xpath",
+                    "selector_text": "(//button[@type='submit'])[8]"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.goToNextStep.continuar",
+            "description": "segue para o proximo passo do fardamento",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "button[name='action']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.addShorts.sim",
+            "description": "responde para para 'adicionar calcao'",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='/oe/commerce/productGroup/formhandler/BridgeNavigationFormHandler.navigateAcceptItem']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.selectFirstShortsAvailable.shorts",
+            "description": "seleciona primeiro calcao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "xpath",
+                    "selector_text": "//span/img"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.addSocks.sim",
+            "description": "adicionar meiao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='/oe/commerce/productGroup/formhandler/BridgeNavigationFormHandler.navigateAcceptItem']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.selectFirstSocksAvailable.socks",
+            "description": "seleciona primeiro meiao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "xpath",
+                    "selector_text": "//span/img"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.addGoalkeeper.sim",
+            "description": "adicionar uniforme do goleiro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='/oe/commerce/productGroup/formhandler/BridgeNavigationFormHandler.navigateAcceptItem']"
+                }
+            ]
+        },
+
+        {
+            "id": "FardamentoFutebolPage.addSocksGoalkeeper.sim",
+            "description": "adicionar do goleiro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='/oe/commerce/productGroup/formhandler/BridgeNavigationFormHandler.navigateAcceptItem']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_name_0",
+            "description": "adicionar do jogar 0",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='Player_name-0']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_name_1",
+            "description": "adicionar do jogar 1",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='Player_name-1']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_name_2",
+            "description": "adicionar do jogar 2",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='Player_name-2']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_name_3",
+            "description": "adicionar do jogar 3",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='Player_name-3']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_number-0",
+            "description": "adicionar numero do jogar 0",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='Player_number-0']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_number-1",
+            "description": "adicionar numero do jogar 1",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='Player_number-1']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_number-2",
+            "description": "adicionar numero do jogar 2",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='Player_number-2']"
+                }
+            ]
+
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_number-3",
+            "description": "adicionar numero do jogar 3",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='Player_number-3']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setGoalkeeper.goalkeeper_name",
+            "description": "adicionar nome do goleiro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='Goalie_name-0']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setGoalkeeper.goalkeeper_number",
+            "description": "adicionar numero do goleiro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "input[name='Goalie_number-0']"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setGoalkeeper.goalkeeper_shirt_size",
+            "description": "selecionar tamanho da camisa do goleiro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Goalie_shirt-0"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setGoalkeeper.goalkeeper_shorts_size",
+            "description": "selecionar tamanho do calcao do goleiro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Goalie_shorts-0"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setGoalkeeper.goalkeeper_socks_size",
+            "description": "selecionar tamanho do meiao do goleiro",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Goalie_socks-0"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_shirt_0",
+            "description": "selecionar tamanho da camiseta jogador 0",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Player_shirt-0"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_shorts_0",
+            "description": "selecionar tamanho do calcao do jogador 0",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Player_shorts-0"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_socks_0",
+            "description": "selecionar tamanho do meiao do jogador 0",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Player_socks-0"
+                }
+            ]
+        },
+
+
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_shirt_1",
+            "description": "selecionar tamanho da camiseta jogador 1",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Player_shirt-1"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_shorts_1",
+            "description": "selecionar tamanho do calcao do jogador 1",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Player_shorts-1"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_socks_1",
+            "description": "selecionar tamanho do meiao do jogador 1",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Player_socks-1"
+                }
+            ]
+        },
+
+
+
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_shirt_2",
+            "description": "selecionar tamanho da camiseta jogador 2",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Player_shirt-2"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_shorts_2",
+            "description": "selecionar tamanho do calcao do jogador 2",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Player_shorts-2"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_socks_2",
+            "description": "selecionar tamanho do meiao do jogador 2",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Player_socks-2"
+                }
+            ]
+        },
+
+
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_shirt_3",
+            "description": "selecionar tamanho da camiseta jogador 3",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Player_shirt-3"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_shorts_3",
+            "description": "selecionar tamanho do calcao do jogador 3",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Player_shorts-3"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.setPlayer.player_socks_3",
+            "description": "selecionar tamanho do meiao do jogador 3",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "name",
+                    "selector_text": "Player_socks-3"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.hasOutOfStockText.out_of_stock_text",
+            "description": "texto que indica camisa/calcao/meiao sem estoque",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "xpath",
+                    "selector_text": "//*[contains(text(),'Sem estoque, por favor selecione outro tamanho')]"
+                }
+            ]
+        },
+
+        {
+            "id": "FardamentoFutebolPage.tryAnotherSizesForItensOutOfStock.tshirts",
+            "description": "selecao de camisas sem estoque",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "div.s-wrap.size-shirt.f-wrap.error > div > select"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.tryAnotherSizesForItensOutOfStock.shorts",
+            "description": "selecao de calcoes sem estoque",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "div.s-wrap.size-short.f-wrap.error > div > select"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.tryAnotherSizesForItensOutOfStock.socks",
+            "description": "selecao de meioes sem estoque",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "div.s-wrap.size-socks.f-wrap.error > div > select"
+                }
+            ]
+        },
+        {
+            "id": "FardamentoFutebolPage.checkItemsAndGo.done",
+            "description": "finaliza o fardamento",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "button[name='action']"
+                }
+            ]
+        },
+        {
+            "id": "TESTE_FARDAMENTO_TSHIRT_OUT_OF_STOCK",
+            "description": "t-shirt out of stock",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "xpath",
+                    "selector_text": "//img[@alt='Camisa Adidas Estro 15 - Pink']"
+                }
+            ]
+        },
+        {
+            "id": "ProductPage.showVideo.video_button",
+            "description": "botao de video do produto",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "a.main-button > span.wrap-icon"
+                }
+            ]
+        },
+
+        {
+            "id": "ProductPage.showVideo.missing_flash_plugin",
+            "description": "plugin do flash nao esta instalado",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "img[alt='Get Adobe Flash player']"
+                }
+            ]
+        },
+        {
+            "id": "ProductPage.isVideoPresent.video",
+            "description": "verificacao se video foi mostrado",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "id",
+                    "selector_text": "netshoesProductPlayer"
+                }
+            ]
+        },
+        {
+            "id": "CartPage.isFreeFreight.Cep1_field",
+            "description": "Campo cep1 na página do carrinho",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "cep-prefix"}
+            ]
+        },
+        {
+            "id": "CartPage.isFreeFreight.calculate_freight",
+            "description": "Clicar no botão calcular frete",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".neutral-button.micro-button"}
+            ]
+        },
+        {
+            "id": "CartPage.isFreeFreight.msg_freight",
+            "description": "Menssagem de Frete Gratis",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".free-price"}
+            ]
+        },
+        {
+            "id": "CartPage.isFreeFreight.freight_price",
+            "description": "Preço do frete",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".shipping-price"}
+            ]
+        },
+        {
+            "id": "CartPage.isFreeFreight.new_price",
+            "description": "Preço do produto",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".new-price"}
+            ]
+        },
+        {
+            "id": "CartPage.final_price",
+            "description": "Preço do produto",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".final-price"}
+            ]
+       },
+       {
+            "id": "CartPage.isFreeFreight.dateMessage",
+            "description": "Quantidade de dias úteis no frete",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".column-shipping-price.cart-product-price>p>span:last-child"}
+            ]
+        },
+	{
+            "id": "ProductListPage.isProductListPage.product_list",
+            "description": "listagem de produtos procurados",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "span.product-img"
+                }
+            ]
+        },
+        {
+            "id": "PaginationPage.hasControls.control",
+            "description": "controle de paginacao",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "class",
+                    "selector_text": "pagination-item"
+                }
+            ]
+        },
+        {
+            "id": "PaginationPage.getControls.control_set",
+            "description": "conjunto de elementos de paginacao",
+            "element_return": "list",
+            "timeout": 20,
+            "data": [
+                {
+                    "alias": "default",
+                    "selenium_by": "css",
+                    "selector_text": "ul.pagination-list > li > a"
+                }
+            ]
+        },
+        {
+            "id": "CartPage.PromotionBanner.msg1",
+            "description": "Banner compre 3 pelo preço de 2",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".c-promotion-banner__title"}
+            ]
+        },
+        {
+            "id": "CartPage.increaseAmount",
+            "description": "Aumenta a quantidade do produto",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".increase-amount"}
+            ]
+        },
+        {
+            "id": "CartPage.flagPromotion",
+            "description": "Promoção compre 2 leve 3",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".c-promo-flag.c-promo-flag--rateio"}
+            ]
+        },
+        {
+            "id": "SubPage.SubPageErrorMessage",
+            "description": "Menssagem de Erro na sub página",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".communique > h2"}
+            ]
+        },
+        {
+            "id": "SteloPage.isHomePage.username",
+            "description": "Campo username da pagina da Stelo",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "username"}
+            ]
+        },
+       {
+            "id": "PaymentPage.discountBlock.discount",
+            "description": "Preenche o campo discount",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "id", "selector_text": "code"}
+            ]
+        },
+        {
+            "id": "PaymentPage.discountBlock.BtnDiscount",
+            "description": "Botão adicionar compra",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".main-button.small-button"}
+            ]
+        },
+        {
+            "id": "PaymentPage.discountBlock.errorDiscountMsg",
+            "description": "Menssagem de erro no desconto",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".payment-content > .base-feedback"}
+            ]
+        },
+        {
+            "id": "PaymentPage.discountBlock.finalErrorMsg",
+            "description": "Menssagem de erro no final do pagamento",
+            "element_return": "single",
+            "timeout": 20,
+            "data": [
+                {"alias": "default", "selenium_by": "css", "selector_text": ".alertError > .base-feedback"}
+            ]
+        }
+        
+    ]
+
+}

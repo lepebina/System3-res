@@ -1,0 +1,36 @@
+.text-area {
+  -fx-font-family: tahoma;
+  -fx-font-size: 8pt;
+}
+
+.oops {
+  -fx-fill: red;
+  -fx-font-weight: bold;
+}
+
+.passed {
+  -fx-fill: green;
+  -fx-font-weight: bold;
+}
+
+.trace {
+  -fx-fill: grey;
+}
+
+.step {
+  -fx-font-style: italic;
+}
+
+.scenario {
+  -fx-fill: blue;
+  -fx-font-weight: bold;
+}
+
+.starting {
+  -fx-fill: darkgreen;
+  -fx-font-size: 14pt;
+  -fx-font-weight: bold;
+}
+
+
+
